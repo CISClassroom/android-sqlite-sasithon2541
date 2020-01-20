@@ -20,6 +20,7 @@ class DBHelper(
     val COLUMN_ID = "id"
     val COLUMN_TASKNAME = "taskname"
 
+    //ADDDATABASE
     fun addTask(newTask: Task){
         val values = ContentValues()
         values.put(COLUMN_TASKNAME,newTask.taskname)
@@ -30,9 +31,30 @@ class DBHelper(
         db.close()
     }
 
+    //SHOWDATABASE
     fun getAlltask(): Cursor{
         val db = this.readableDatabase
         return db.rawQuery("SELECT * FROM " + TABLE_NAME,null)
+    }
+
+    //UPDATE
+    fun updateTask(data: Task):Int {
+        val db = this.writableDatabase
+        val contentValues = ContentValues()
+        contentValues.put(COLUMN_TASKNAME,data.taskname)
+        val result = db.update(TABLE_NAME,contentValues,
+            COLUMN_ID + " = " + data.id,null)
+        close()
+        return result
+    }
+
+    //DELETE
+    fun deleteTask(id: Int):Int{
+        val db = this.writableDatabase
+        val result = db.delete(TABLE_NAME,
+           COLUMN_ID + " = " + id,null)
+        db.close()
+        return result
     }
 
 

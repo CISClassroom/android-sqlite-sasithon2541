@@ -27,17 +27,38 @@
             android:id="@+id/button_add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="บันทึก" />
+            android:text="ADD TO DATABASE" />
 
         <Button
             android:id="@+id/button_read"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="แสดง" />
+            android:text="READ FROM DATABASE" />
 
         <TextView
             android:id="@+id/displayText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="246dp" />
+
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/button_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="EDIT" />
+
+        <Button
+            android:id="@+id/button_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DELETE" />
+
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
